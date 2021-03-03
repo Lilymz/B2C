@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link href="../orderManagement/css/reset.css" rel="stylesheet">
+<link href="../orderManagement/css/iconfont.css" rel="stylesheet">
+<link href="../orderManagement/css/index.css" rel="stylesheet">
+<script src="../orderManagement/js/jquery-1.9.1.min.js"></script>
+<script src="../orderManagement/js/f.js"></script>
+<script src="../commons/commons.js"></script>
+<script src="../orderManagement/js/orderManagement.js"></script>
+<link rel="stylesheet" href="../static/css/sm.css">
+<link rel="stylesheet" href="../static/css/sm-extend.css">
+<title>订单管理</title>
+</head>
+<body>
+	<div class="PublicHead clearfix" style="background: #000000;">
+		<div class="leftBox clearfix" style="position: relative; left: 45%;">
+
+			<!--<i class="iconfont icon-caidan"></i>-->
+
+			<div class="companyText" style="">订单管理</div>
+		</div>
+
+	</div>
+
+	<div class="PublicDownWhole clearfix">
+		<!--右侧-->
+		<div class="RightBox" style="left: 6%;">
+			<div class="PublicContentBox" style="">
+				<!--公用指向页面名字-->
+
+				<!--查询-->
+				<div class="InquireBox clearfix">
+					<div class="InquireleftBox">
+						<div class="Text">订单号：</div>
+						<div class="InputDiv">
+							<input class="phoneInput" placeholder="请输入你需要查询的订单号">
+						</div>
+					</div>
+					<div class="PublicBtnIcon Color1Btn fr">
+						<i class="iconfont icon-icon-chaxun"></i> <span>查询</span>
+					</div>
+				</div>
+				<!--表修改-->
+				<div class="InquireTableBox" style="">
+					<div class="headbox">
+
+						<!--批量删除-->
+						<!--<div class="PublicBtnIcon Color2Btn fr Js_edit">
+                            <i class="iconfont icon-changyongtubiao-mianxing-"></i>
+                            <span>添加</span>
+                        </div>-->
+					</div>
+
+					<!--查询到的表格-->
+
+					<div class="InquireSelectTable" style="height: 500px;">
+						<table class="PublicTableCss">
+							<thead>
+								<tr>
+									<td data-id="订单id">订单编号</td>
+									<td>姓名</td>
+									<td>手机号</td>
+									<td>地址</td>
+									<td>店铺名</td>
+									<td>商品</td>
+									<td>应付金额</td>
+									<td>支付方式</td>
+									<td>订单状态</td>
+									<td>下单时间</td>
+									<td>成交时间</td>
+									<td>操作</td>
+								</tr>
+
+							</thead>
+							<tbody>
+							</tbody>
+						</table>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- alert通用 提示是否删除-->
+	<div class="PublicFloatBox f_delete">
+		<div class="f_MiddleBox wid260">
+			<div class="f_Head">
+				<span>提示消息</span> <i
+					class="Js_closeBtn iconfont icon-buoumaotubiao20 fr"></i>
+			</div>
+			<div class="f_content clearfix">
+				<!--提示消息内容-->
+				<div class="f_someText">
+					<i class="iconfont icon-tishi"></i> <span>确定删除此信息？</span>
+				</div>
+				<!--按钮-->
+				<div class="f_pormatBtn  clearfix">
+					<div class="f_pormatBtn1">确定</div>
+					<div class="f_pormatBtn2">删除</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--添加用户浮层-->
+	<div class="PublicFloatBox adduser">
+		<div class="f_MiddleBox wid400">
+			<div class="f_Head">
+				<span>添加用户</span> <i
+					class="Js_closeBtn iconfont icon-buoumaotubiao20 fr"></i>
+			</div>
+			<div class="f_content">
+				<div class="f_alonediv">
+					<div class="f_alone_name">ID:</div>
+					<div class="f_alone_input">
+						<input class="f_p_input">
+					</div>
+					<!--提示消息-->
+					<div class="f_pormat">请输入正确的ID</div>
+				</div>
+				<div class="f_alonediv">
+					<div class="f_alone_name">手机号:</div>
+					<div class="f_alone_input">
+						<input class="f_p_input">
+					</div>
+					<!--提示消息-->
+					<div class="f_pormat">请输入正确的手机号</div>
+				</div>
+				<div class="f_alonediv1">
+					<div class="f_alone_name"></div>
+					<div class="f_alone_input1">
+						<!--publicbtn-->
+						<div class="publicf_btn">
+							<div class="publicf_btn1">确定</div>
+							<div class="publicf_btn2 fr Js_closeBtn">取消</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<script src='https://sui.thinkadmin.top/dist/js/sm.js'></script>
+    <script src='https://sui.thinkadmin.top/dist/js/sm-extend.js'></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="zjmx.ssm.o2o.dao.ShippingAddrDao">
+	<resultMap type="zjmx.ssm.o2o.entity.ShippingAddr" id="shippingAddrMap">
+		<id column="goods_id" property="goodsId"/>
+		<result column="goods_name" property="goodsName"/>
+		<result column="goods_phone" property="goodsPhone"/>
+		<result column="goods_addr" property="goodsAddr"/>
+		<collection property="userInfo" ofType="zjmx.ssm.o2o.entity.UserInfo">
+			<id column="user_id" property="userId"/>
+			<result column="user_name" property="userName"/>
+			<result column="user_password" property="userPassword"/>
+			<result column="profile_img" property="profileImg"/>
+			<result column="enable_status" property="enableStatus"/>
+			<result column="user_type" property="userType"/>
+			<result column="gender" property="gender"/>
+			<result column="email" property="email"/>
+			<result column="create_time" property="createTime"/>
+			<result column="last_edit_time" property="lastEditTime"/>
+			<result column="money" property="money"/>
+		</collection>
+	</resultMap>
+	<select id="queryShippingAddrByIf" resultMap="shippingAddrMap">
+		SELECT
+		sa.goods_id,sa.goods_name,sa.goods_phone,sa.goods_addr,ui.*
+		FROM tb_shippingaddr sa,tb_userinfo ui
+		<where>
+			<if test="shippingAddr!=null">
+				sa.user_id=ui.user_id
+			</if>
+			<if test="shippingAddr.userInfo!=null and shippingAddr.userInfo.userId!=null">
+				and sa.user_id=#{shippingAddr.userInfo.userId}
+			</if>
+			<if test="shippingAddr.goodsName!=null">
+				and sa.goods_name=#{shippingAddr.goodsName}
+			</if>
+			<if test="shippingAddr.goodsPhone!=null">
+				and sa.goods_phone=#{shippingAddr.goodsPhone}
+			</if>
+			<if test="shippingAddr.goodsAddr!=null">
+				and sa.goods_addr=#{shippingAddr.goodsAddr}
+			</if>
+		</where>
+	</select>
+	<update id="updateShippingAddrByIf" useGeneratedKeys="true">
+		UPDATE tb_shippingaddr
+		<set>
+			<if test="shippingAddr.goodsName!=null">
+				goods_name=#{shippingAddr.goodsName},
+			</if>
+			<if test="shippingAddr.goodsPhone!=null">
+				goods_phone=#{shippingAddr.goodsPhone},
+			</if>
+			<if test="shippingAddr.goodsAddr!=null">
+				goods_addr=#{shippingAddr.goodsAddr},
+			</if>
+		</set>
+		<where>
+			<if test="shippingAddr.userInfo!=null and shippingAddr.userInfo.userId!=null">
+			and user_id=#{shippingAddr.userInfo.userId}
+			</if>
+			<if test="shippingAddr.goodsId">
+			and goods_id=#{shippingAddr.goodsId}
+			</if>
+		</where>
+	</update>
+	<delete id="deleteShippingAddrBygoodsId">
+		DELETE FROM tb_shippingaddr
+		WHERE
+		goods_id=#{goodsId}
+	</delete>
+	<insert id="insertShippingAddr" useGeneratedKeys="true">
+		INSERT INTO tb_shippingaddr(goods_id,goods_name,goods_phone,goods_addr,user_id)
+		VALUES(null,#{shippingAddr.goodsName},#{shippingAddr.goodsPhone},#{shippingAddr.goodsAddr},#{shippingAddr.userInfo.userId})
+	</insert>
+</mapper>

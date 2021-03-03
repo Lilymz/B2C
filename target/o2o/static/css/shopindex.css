@@ -1,0 +1,97 @@
+nav{
+	width:20%;
+	height:440px;
+	overflow-y:scroll;
+	top: 8%;
+	position: absolute;
+}
+.content-block{
+	height:440px;
+	overflow:hidden;
+}
+.content{
+overflow:hidden;
+}
+article{
+	width:80%
+	position:relative;
+}
+.content-padded {
+    margin: 0.5rem;
+    width: 78%;
+    position: absolute;
+    left: 20%;
+    top: 8%;
+	height:90%;
+	overflow-y:scroll;
+}
+.bar.bar-tab{
+	position: absolute;
+    top: 92%;
+}
+.list-block {
+    margin: 0;
+}
+
+/*商家信息的CSS*/
+.tab2-content-paded{
+	height: 100%;
+    width: 100%;
+}
+.content-block.tab3{
+	background:white;
+	margin: 0;
+}
+.shopdesc{
+    position: relative;
+    width: 50%;
+    text-align: center;
+    font-family: serif;
+    font-weight: lighter;
+    height: 24%;
+	margin: 0.5rem 0;
+	border-color: #8e8686;
+    border-radius: 10%;
+    border-style: groove;
+}
+.shopImg{
+	position: relative;
+    left: 66%;
+    top: -185px;
+    width: 36%;
+    height: 50%;
+}
+.homecontent{
+	position: relative;
+    top: -38px;
+    left: 25px;
+}
+.createshopTime{
+	position: relative;
+    top: -256px;
+    left: 1%;
+}
+.adminAdvice{
+	width: 50%;
+    top: -242px;
+    text-align: center;
+    border-radius: 4%;
+    position: relative;
+    border-style: outset;
+}
+.shopPhone{
+	position: relative;
+    top: -234px;
+    left: 1%;
+}
+.content-block.tab2{
+	height:440px;
+	overflow-y:scroll;
+}
+.shopHome{
+	width: 50%;
+}
+.button.button-fill{
+	position: relative;
+    top: 11px;
+}

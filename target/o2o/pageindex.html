@@ -1,0 +1,258 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>校园O2O</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1  maximum-scale=1">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="HandheldFriendly" content="True">
+	
+	<link rel="shortcut icon" href="../o2o/static/template/img/favicon.png">
+	<link rel="stylesheet" href="../o2o/static/template/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../o2o/static/template/css/materialize.min.css">
+	<link rel="stylesheet" href="../o2o/static/template/css/fakeLoader.css">
+	<link rel="stylesheet" href="../o2o/static/template/css/slick.css">
+	<link rel="stylesheet" href="../o2o/static/template/css/slick-theme.css">
+	<link rel="stylesheet" href="../o2o/static/template/css/style.css">
+	
+</head>
+<body class="home">
+
+
+	<!-- loading -->
+	<div id="loading"></div>
+	<!-- end loading -->
+
+	<!-- navbar -->
+	<div class="navbar">
+		<div class="container">
+			<div class="panel-control-left">
+				<a href="#" data-activates="slide-out-left" class="sidenav-control-left"><i class="fa fa-bars"></i></a>
+			</div>
+			<div class="site-title">
+				<a href="index.html" class="logo"><h1>校园O2O</h1></a>
+			</div>
+			<div class="panel-control-right">
+				<a href="contact.html"><i class="fa fa-envelope-o"></i></a>
+			</div>
+		</div>
+	</div>
+	<!-- end navbar -->
+
+	<!-- panel control left -->
+	<div class="panel-control-left">
+		<ul id="slide-out-left" class="side-nav collapsible"  data-collapsible="accordion">
+			<li class="author">
+				<img src="\image\ProductImageDetailed\designImg.jpg" alt="">
+				<div class="desc">
+					<h5>Designer:张杰</h5>
+					<span>专业：网络工程</span>
+				</div>
+			</li>
+			<li>
+				<a href="/o2o/Page/index"><i class="fa fa-home"></i>Home</a>
+			</li>
+			<li>
+				<a href="http://www.webappxin.com"><i class="fa fa-rss"></i>Blog</a>
+			</li>
+			<li>
+				<a href="/o2o/Page/o2ofaq"><i class="fa fa-question"></i>Faq</a>
+			</li>
+			<li>
+				<a href="/o2o/Page/o2otestimonial"><i class="fa fa-user"></i>DesignerInformation</a>
+			</li>
+			<li>
+				<a href="#" onclick="LoginIndexURL();"><i class="fa fa-sign-in"></i>Login</a>
+			</li>
+			<li>
+				<a href="/o2o/Page/register"><i class="fa fa-user-plus"></i>Register</a>
+			</li>
+		</ul>
+	</div>
+	<!-- end panel control left -->
+
+	
+	<!-- slider -->
+	<div class="the-slider">
+		<div class="container">
+			<div class="the-slider-entry">
+				<div class="slider-slick">
+					<div class="slider-entry">
+						<img src="\image\ProductImageDetailed\hanbao.jpg" alt="">
+						<div class="caption">
+							<div class="container">
+							</div>
+						</div>
+					</div>
+					<div class="slider-entry">
+						<img src="\image\ProductImageDetailed\cake.jpg" alt="">
+						<div class="caption">
+							<div class="container">
+							</div>
+						</div>
+					</div>
+					<div class="slider-entry">
+						<img src="\image\ProductImageDetailed\shaokao.jpg" alt="">
+						<div class="caption">
+							<div class="container">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end slider -->
+
+	<!-- services -->
+	<div class="services">
+		<div class="container">
+			<div class="app-title">
+				<h4><a href="/o2o/Page/shop">全部商店</a></h4>
+			</div>
+			<div class="row">
+				<a href="/o2o/Page/shoptypeShop?shopTypeId=1" class="ShopTypeName">
+				<div class="col s6">
+					<div class="entry">
+						<i><img src="\image\ParentShoptypeIMage\delicous.png" alt=""></i>
+						<h5>甜点饮品</h5>
+						<p>牛奶和红茶的混合，其味清香甘甜</p>
+					</div>
+				</div>
+				</a>
+				<a href="/o2o/Page/shoptypeShop?shopTypeId=2" class="ShopTypeName">
+				<div class="col s6">
+					<div class="entry">
+						<i><img src="\image\ParentShoptypeIMage\cake.png" alt=""></i>
+						<h5>面包蛋糕</h5>
+						<p>蛋糕是一种古老的西点</p>
+					</div>
+				</div>
+				</a>
+			</div>
+			<div class="row">
+				<a href="/o2o/Page/shoptypeShop?shopTypeId=3" class="ShopTypeName">
+				<div class="col s6">
+					<div class="entry">
+						<i><img src="\image\ParentShoptypeIMage\pizza.png" alt=""></i>
+						<h5>汉堡披萨</h5>
+						<p>单一咖啡豆磨制而成</p>
+					</div>
+				</div>
+				</a>
+				<a href="/o2o/Page/shoptypeShop?shopTypeId=4" class="ShopTypeName">
+				<div class="col s6">
+					<div class="entry">
+						<i><img src="\image\ParentShoptypeIMage\Drink.png" alt=""></i>
+						<h5>奶茶饮料</h5>
+						<p>多种物质混合的饮品，美味且精致</p>
+					</div>
+				</div>
+				</a>
+			</div>
+		</div>
+	</div>
+	<!-- end services -->
+
+	<!-- note -->
+	<div class="note">
+		<div class="container">
+			<h5>我们合作的伙伴</h5>
+			<p>他们是主打外卖派送的平台，是一款自助点菜,自助下单的一款应用软件。解决了上班族和宅男宅女的吃饭问题。是一款B2C软件,线上和线下的一种关系</p>
+		</div>
+	</div>
+	<!-- end note -->
+
+	<!-- latest-blog -->
+	<div class="latest-blog">
+		<div class="container">
+			<div class="app-title">
+				<h4>Our Partner</h4>
+			</div>
+			<div class="row">
+				<a href="https://waimai.meituan.com/">
+				<div class="col s6">
+					<div class="entry">
+						<img src="\image\ProductImageDetailed\meituan.jpg" alt="">
+						<div class="desc">
+							<h5><a href="">美团外卖</a></h5>
+							<span>2020-11月</span>
+						</div>
+					</div>
+				</div>
+				</a>
+				<a href="https://www.ele.me/">
+				<div class="col s6">
+					<div class="entry">
+						<img src="\image\ProductImageDetailed\elm.png" alt="">
+						<div class="desc">
+							<h5><a href="">饿了么</a></h5>
+							<span>2020-11月</span>
+						</div>
+					</div>
+				</div>
+				</a>
+			</div>
+			<div class="row">
+				<a href="https://kuai.imdada.cn/">
+				<div class="col s6">
+					<div class="entry">
+						<img src="\image\ProductImageDetailed\dada.jpg" alt="">
+						<div class="desc">
+							<h5><a href="">达达</a></h5>
+							<span>2020-11月</span>
+						</div>
+					</div>
+				</div>
+				</a>
+				<a href="https://www.51wm.com/">
+				<div class="col s6">
+					<div class="entry">
+						<img src="\image\ProductImageDetailed\woyaowaimai.jpg" alt="">
+						<div class="desc">
+							<h5><a href="">我要外卖</a></h5>
+							<span>2020-11月</span>
+						</div>
+					</div>
+				</div>
+				</a>
+			</div>
+		</div>
+	</div>
+	<!-- end latest-blog -->
+	
+	<!-- footer -->
+	<footer>
+		<div class="container">
+			<h6>找我 & 联系我</h6>
+			<ul class="icon-social">
+				<li class="qq"><a href=""><i class="fa fa-qq"></i></a></li>
+				<li class="wechat"><a href=""><i class="fa fa-wechat"></i></a></li>
+				<li class="google"><a href=""><i class="fa fa-google"></i></a></li>
+			</ul>
+			<div class="tel-fax-mail">
+				<ul>
+					<li><span>Tel:</span> 19522821941</li>
+					<li><span>Email:</span> 2634083023@qq.com</li>
+				</ul>
+			</div>
+			<div class="ft-bottom">
+				<span>Copyright © 闽南师范大学计算机学院 </span>
+			</div>
+		</div>
+	</footer>
+	<!-- end footer -->
+	
+	<!-- script -->
+	<script src="../o2o/static/template/js/jquery.min.js"></script>
+	<script src="../o2o/static/js/index.js"></script>
+	<!-- 把自己写的js文件放在这段文字之上，后面的js会改变jQuery -->
+	<script src="../o2o/static/template/js/materialize.min.js"></script>
+	<script src="../o2o/static/template/js/fakeLoader.min.js"></script>
+	<script src="../o2o/static/template/js/loading.js"></script>
+	<script src="../o2o/static/template/js/slick.min.js"></script>
+	<script src="../o2o/static/template/js/custom.js"></script>
+	<script src="../o2o/commons/isLogin.js"> </script>
+	
+</body>
+</html>

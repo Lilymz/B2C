@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="zjmx.ssm.o2o.dao.AreaDao">
+	<select id="queryArea" resultType="zjmx.ssm.o2o.entity.Area">
+		SELECT
+		area_id,area_name,priority,create_time,last_edit_time from tb_area
+		ORDER BY priority DESC
+	</select>
+	<select id="queryAreaByName" resultType="zjmx.ssm.o2o.entity.Area">
+		SELECT
+		area_id,area_name,priority,create_time,last_edit_time from tb_area
+		Where area_name=#{areaName}
+		ORDER BY priority DESC
+	</select>
+</mapper>

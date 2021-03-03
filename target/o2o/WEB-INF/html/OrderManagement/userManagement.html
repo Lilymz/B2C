@@ -1,0 +1,175 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="../orderManagement/css/reset.css" rel="stylesheet" />
+    <link href="../orderManagement/css/iconfont.css" rel="stylesheet" />
+    <link href="../orderManagement/css/index.css" rel="stylesheet" />
+    <script src="../orderManagement/js/jquery-1.9.1.min.js"></script>
+</head>
+<body>
+    <div class="PublicHead clearfix">
+        <div class="leftBox clearfix">
+            <div class="companyLogo">
+                <img src="\image\ProductImageDetailed\superadmin.png" />
+            </div>
+            <!--<i class="iconfont icon-caidan Js_MenuList"></i>-->
+
+            <div class="companyText">
+                超级管理员系统
+            </div>
+        </div>
+        <div class="RightBox clearfix">
+            <div class="UserPhotoBox">
+                <span class="iconfont icon-AdminRoles"></span>
+                <div class="UserName">
+                </div>
+            </div>
+            <a href="#" class="logout">
+                <div class="dropOutBox">
+                    <i class="iconfont icon-app_icons--">
+                    </i>
+                    <span>退出</span>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="PublicDownWhole clearfix">
+        <!--左侧-->
+        <div class="leftBox Js_leftBox">
+            <ul>
+                <a href="/o2o/superadmin/userManagement"> 
+                <li class="Select"><i class="iconfont icon-yonghuguanli"></i><span>用户管理</span></li>
+                </a>
+                <a href="/o2o/superadmin/shopManagement">
+                 <li><i class="iconfont icon-yonghuguanli"></i><span>店家管理</span></li>
+                </a>
+                <a href="/o2o/superadmin/shopRegisterManagement">
+                 <li><i class="iconfont icon-xiala"></i><span>店铺审核</span></li>
+                </a>
+            </ul>
+        </div>
+        <!--右侧-->
+        <div class="RightBox Js_RightBox">
+            <div class="PublicContentBox">
+                <!--公用指向页面名字-->
+                <div class="PublicPointToAgeText">
+                    <span class="span1">用户管理</span> <span class="span2">后台用户管理列表</span>
+                </div>
+                <!--查询-->
+                <div class="InquireBox clearfix">
+                    <div class="InquireleftBox">
+                        <div class="Text">用户名：</div>
+                        <div class="InputDiv">   <input class="phoneInput" placeholder="请输入你需要查询的用户名" /></div>
+                    </div>
+                    <div class="PublicBtnIcon Color1Btn fr">
+                        <i class="iconfont icon-icon-chaxun"></i>
+                        <span>查询</span>
+                    </div>
+                </div>
+                <!--表修改-->
+                <div class="InquireTableBox">
+
+                    <!--查询到的表格-->
+
+                    <div class="InquireSelectTable">
+                        <table class="PublicTableCss">
+                            <thead>
+                                <tr>
+                                    <td>ID</td>
+                                    <td>用户名</td>
+                                    <td>性别</td>
+                                    <td>email</td>
+                                    <td>注册时间</td>
+                                    <td>状态</td>
+                                    <td>操作</td>
+                                </tr>
+
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- alert通用 提示是否删除-->
+    <div class="PublicFloatBox f_delete">
+        <div class="f_MiddleBox wid260">
+            <div class="f_Head">
+                <span>提示消息</span>
+                <i class="Js_closeBtn iconfont icon-buoumaotubiao20 fr"></i>
+            </div>
+            <div class="f_content clearfix">
+                <!--提示消息内容-->
+                <div class="f_someText">
+                    <i class="iconfont icon-tishi"></i>
+                    <span>确定删除此信息？</span>
+                </div>
+                <!--按钮-->
+                <div class="f_pormatBtn  clearfix">
+                    <div class="f_pormatBtn1">
+                        确定
+                    </div>
+                    <div class="f_pormatBtn2 Js_closeBtn">
+                        取消
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--添加用户浮层-->
+    <div class="PublicFloatBox adduser">
+        <div class="f_MiddleBox wid400">
+            <div class="f_Head">
+                <span>状态修改</span>
+                <i class="Js_closeBtn iconfont icon-buoumaotubiao20 fr"></i>
+            </div>
+            <div class="f_content">
+                <div class="f_alonediv">
+                    <div class="f_alone_name">
+                      	  状态值(0-2):
+                    </div>
+                    <div class="f_alone_input">
+                        <input class="f_p_input" />
+                    </div>
+                    <!--提示消息-->
+                    <div class="f_pormat">
+                        请输入正确的状态
+                    </div>
+                </div>
+                <div class="f_alonediv1">
+                    <div class="f_alone_name">
+                    </div>
+                    <div class="f_alone_input1">
+                        <!--publicbtn-->
+                        <div class="publicf_btn">
+                            <div class="publicf_btn1">
+                                确定
+                            </div>
+                            <div class="publicf_btn2 fr Js_closeBtn">
+                                取消
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!--返回顶部-->
+    <a href="javaScript:void();" class="back-to-top"><i class="iconfont icon-fanhuidingbu"></i> </a>
+	<script src="../orderManagement/js/jquery-1.9.1.min.js"></script>
+	<script src="../orderManagement/js/userManagement.js"></script>
+	<script src="../commons/commons.js"></script>
+</body>
+</html>

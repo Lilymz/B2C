@@ -1,0 +1,69 @@
+html { 
+	font-family: "Helvetica Neue",Helvetica, sans-serif;
+	/*谷歌浏览器字体最小字体12px*/
+	-webkit-text-size-adjust: none;/*100%/none 关闭字体大小自动调整功能*/
+	/*a标签及拥有 :active伪类的元素有默认的高亮框*/
+	-webkit-tap-hightlight-color: transparent;
+	/*禁止文本被选中*/
+	-webkit-user-select: none;
+	height: 100%;
+}
+*{
+	margin: 0;
+	padding:0;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	font-family: "Microsoft YaHei";
+	font-size: .67rem;
+}
+body{
+	overflow-x:hidden;
+	height: 100%;
+	/*开启moblie网页快速滚动和回弹的效果*/
+	-webkit-overflow-scrolling: touch;
+	overflow-x: hidden;
+	-webkit-text-size-adjust: none !important;
+}
+a{
+	color: #333;
+	text-decoration: none;
+}
+img{
+	border: 0;
+	display: block;
+	width: 100%;
+	vertical-align: middle;
+}
+button,input{
+	        appearance: none;
+	-webkit-appearance: none;
+	   -moz-appearance: none;
+	     outline: none;
+	     border: none;
+	     text-align: center;
+}
+.fl{
+	float:left;
+}
+.fr{
+	float:right;
+}
+.clearfix:after{
+	content:"";
+	display:block;
+	width:100%;
+	height:0;
+	clear:both;
+}
+   h1,h2,h3,h4,h5,h6{
+   	font-weight: normal;
+   }
+ .relative{
+ 	position: relative;
+ }
+ .absolute{
+ 	position: absolute;
+ }
+ .fixed{
+ 	position: fixed;
+ }

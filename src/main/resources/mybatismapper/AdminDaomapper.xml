@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="zjmx.ssm.o2o.dao.AdminDao">
+	<select id="queryAdmin" resultType="zjmx.ssm.o2o.entity.Admin">
+		SELECT
+		admin_id,admin_name,admin_password
+		FROM tb_admin
+		WHERE
+		admin_name=#{admin.adminName} and admin_password=#{admin.adminPassword}
+	</select>
+</mapper>

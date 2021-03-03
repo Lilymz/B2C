@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="zjmx.ssm.o2o.dao.ProductTypeDao">
+	<select id="getProductTypes" resultType="ProductType">
+		SELECT
+		p.productType_name,p.priority,p.create_time,p.productType_id,p.shop_id
+		FROM
+		tb_shop s,tb_producttype p
+		WHERE s.shop_id=p.shop_id and
+		p.shop_id=#{shopId}
+		ORDER BY p.priority DESC
+	</select>
+	<delete id="deleteProductType" parameterType="long">
+	DELETE FROM tb_producttype WHERE productType_id =#{productTypeId}
+	</delete>
+	<insert id="batchInsertProductType" parameterType="java.util.List">
+		INSERT INTO
+		tb_producttype(shop_id,productType_name,priority,create_time) 
+		VALUES
+		<foreach collection="list" item="ProductType" index="index" separator=",">
+		(
+			#{ProductType.shopId},
+			#{ProductType.productTypeName},
+			#{ProductType.priority},
+			#{ProductType.createTime}
+		)
+		</foreach>
+	</insert>
+</mapper>

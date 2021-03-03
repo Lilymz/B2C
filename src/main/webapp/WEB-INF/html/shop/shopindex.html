@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>商店主页</title>
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+        <link rel="shortcut icon" href="https://sui.thinkadmin.top/favicon.ico">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+        <link rel="stylesheet" href="../static/css/sm.css">
+        <link rel="stylesheet" href="../static/css/sm-extend.css">
+        <link rel="stylesheet" href="https://sui.thinkadmin.top/assets/css/docs.css">
+        <link rel="stylesheet" href="../static/css/shopindex.css">
+        </head>
+        <style>
+    .comment {
+        margin: 41px auto 0px auto;
+    }
+
+    .comment-text-area {
+        width: 700px;
+    }
+
+    .text-area {
+        width: 100%;
+        max-height: 150px;
+        border: 5px #ebebeb solid;
+        height: 150px;
+        overflow: hidden;
+        padding: 5px 5px 5px 5px;
+        color: #999999;
+    }
+
+    .text-area-input-length {
+        font-size: 12px;
+        line-height: 30px;
+    }
+
+    .text-area-input-length span {
+        margin: 0px 5px 0px 5px;
+        color: red;
+    }
+
+    .text-area-bottom {
+        text-align: right;
+        margin: 5px 0px 0px 0px;
+        float: right;
+        padding: 0px 0px 0px 0px;
+    }
+
+    .text-area-bottom a {
+        border: #ebebeb 2px solid;
+        padding: 10px 20px 10px 20px;
+        text-decoration: none;
+        color: #000000;
+        font-size: 14px;
+    }
+
+    .text-area-star {
+        overflow: hidden;
+        text-align: center;
+    }
+
+    .text-area-star label {
+        float: left;
+        line-height: 35px;
+        height: 35px;
+        font-size: 12px;
+        margin: 0px 10px 10px 0px;
+        padding: 0px 5px 0px 5px;
+        cursor: pointer;
+        border: 1px solid #ebebeb;
+    }
+
+    .red {
+        color: red;
+        border: 1px solid red !important;
+    }
+
+    .text-area-star label input {
+        filter: alpha(opacity=0);
+        -moz-opacity: 0;
+        opacity: 0;
+        position: absolute;
+    }
+
+    .text-area-star label span {
+        padding: 10px 10px 10px 10px;
+        position: relative;
+    }
+    .item-subtitle{
+    color:red;
+    }
+    .content-block{
+    margin: -0.25rem 0!important;
+    }
+    ::-webkit-scrollbar{
+     display:none;
+   	}
+</style>
+    <body style="font-family: FANGSONG;">
+        <div class="page" style="background: white;">
+              <header class="bar bar-nav" style="height: 10%;background: url(/image/ParentShoptypeIMage/shopNameBackground.png);">
+                <div class='title' style="top: 19%;color: cornsilk;">
+                </div>
+              </header>
+              <nav class="bar bar-tab">
+                    <a class="tab-item external active" href="/o2o/Page/index">
+                      <span class="icon icon-home"></span>
+                      <span class="tab-label">首页</span>
+                    </a>
+                    <a class="tab-item external my-btn" href="#">
+                      <span class="icon icon-settings"></span>
+                      <span class="tab-label">我的</span>
+                    </a>
+              </nav>
+               <div class="panel panel-right panel-cover theme-dark" id='panel-js-demo'>
+                  </div>
+
+              <div class="content " style="top: 75px;background: white;">
+                <div class="buttons-tab">
+                  <a href="#tab1" class="tab-link active button">点单</a>
+                  <a href="#tab2" class="tab-link button">评价</a>
+                </div>
+                <div class="content-block">
+                  <div class="tabs">
+                    <div id="tab1" class="tab active">
+                        <div class="content-block">
+                          <nav>
+                            <div class="docs-side-menu">
+                            </div>
+                          </nav>
+                          <div class="content-padded grid-demo">  
+                          </div>
+                        </div>
+                    </div>
+                    <div id="tab2" class="tab">
+                      <div id="tab2" class="tab active">
+                      <div class="content-block tab2">
+                           <div class="comment-container">
+                          </div>
+                          <div class="comment">
+						        <div><textarea class="text-area text-area-input" name="content"></textarea></div>
+						        <a href="#" class="button button-fill comment-submit" style="position:relative;top:-9px;float:right;width: 79px; left: -22px;">评论店铺</a>
+						  </div>
+
+					</div>
+                    </div>
+                    </div>
+                    <div id="tab3" class="tab">
+                      <div class="content-block tab3">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        <script src='https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js'></script>
+        <script src='https://sui.thinkadmin.top/dist/js/sm.js'></script>
+        <script src='https://sui.thinkadmin.top/dist/js/sm-extend.js'></script>
+        <script src='../commons/commons.js'></script>
+        <script src='../static/js/shopindex.js'></script>
+        <script src="../commons/isLogin.js"> </script>
+    </body>
+</html>

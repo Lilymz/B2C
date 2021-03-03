@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	id="WebApp_ID" version="3.1">
+	<display-name>o2o</display-name>
+	<welcome-file-list>
+	<welcome-file>pageindex.html</welcome-file>
+	<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+	<servlet>
+		<servlet-name>GooglCodeKaptcha</servlet-name>
+		<servlet-class>com.google.code.kaptcha.servlet.KaptchaServlet</servlet-class>
+		<!-- 是否有边框 -->
+		<init-param>
+			<param-name>kaptcha.border</param-name>
+			<param-value>no</param-value>
+		</init-param>
+		<!-- 字体颜色 -->
+		<init-param>
+			<param-name>kaptcha.textproducer.font.color</param-name>
+			<param-value>blue</param-value>
+		</init-param>
+		<!-- 图片宽度 -->
+		<init-param>
+			<param-name>kaptcha.image.width</param-name>
+			<param-value>135</param-value>
+		</init-param>
+		<!-- 图片高度 -->
+		<init-param>
+			<param-name>kaptcha.image.height</param-name>
+			<param-value>50</param-value>
+		</init-param>
+		<!-- 干扰线颜色 -->
+		<init-param>
+			<param-name>kaptcha.noise.color</param-name>
+			<param-value>black</param-value>
+		</init-param>
+		<!-- 使用哪些字符生成code -->
+		<init-param>
+			<param-name>kaptcha.textproducer.char.string</param-name>
+			<param-value>ABDTKFGNXGSJDFFNsnfmg147369</param-value>
+		</init-param>
+		<!-- 字符个数 -->
+		<init-param>
+			<param-name>kaptcha.textproducer.char.length</param-name>
+			<param-value>4</param-value>
+		</init-param>
+		<!-- 字符大小 -->
+		<init-param>
+			<param-name>kaptcha.textproducer.font.size</param-name>
+			<param-value>43</param-value>
+		</init-param>
+		<!-- 使用哪个字体 -->
+		<init-param>
+			<param-name>kaptcha.textproducer.font.names</param-name>
+			<param-value>Arial</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>GooglCodeKaptcha</servlet-name>
+		<url-pattern>/GooglCodeKaptcha</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>springDispatcherServlet</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>classpath:spring-*.xml</param-value>
+		</init-param>
+	</servlet>
+
+	<!-- Map all requests to the DispatcherServlet for handling -->
+	<servlet-mapping>
+		<servlet-name>springDispatcherServlet</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+	<error-page>
+       <error-code>404</error-code>
+       <location>/404.html</location>
+   	</error-page>
+</web-app>

@@ -1,0 +1,25 @@
+@font-face
+{
+font-family:myFirstFont;
+src: url(../font/book.ttf);
+}
+div{
+	font-family:myFirstFont;
+}
+.row.no-gutter{
+	margin-top:10px;
+	border: 3px solid pink;
+}
+div[name='shopname']{
+	color:black;
+}
+div[name='shopstatus']{
+	color:red;
+}
+.row{
+	width:100%;
+}
+#btn{
+	position: relative;
+	top: 92%;
+}

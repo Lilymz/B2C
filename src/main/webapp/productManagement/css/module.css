@@ -1,0 +1,315 @@
+.mobileStyle .bk-herder-logo{
+	font-size: 0.45rem!important;
+	text-align: center;
+}
+/******************菜单栏显示下左侧时样式***************/
+.leftModule.bk-con-menu .breadcrumb{margin: 0;}
+.leftModule .menu-section .column-name{width: 100%; height: initial; float: none; }
+.leftModule .menu-section .column-name.open{border-bottom: 1px solid #dddddd;}
+.leftModule .menu-section .column-name a{border-right: 0; border-bottom: 1px solid #DDDDDD;padding:0px 15px;position: relative; height: 45px;}
+.leftModule .menu-section .column-name a:before{border-right: 0;}
+.leftModule .menu-section .column-name a:after{
+	content: '';
+    border-bottom: 1px solid #ffffff;
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height:0;
+    width: 100%;
+}
+.leftModule .menu-section .column-name .menu-text{display: inline-block; height: 100%; line-height: 45px;}
+.leftModule .menu-section .menuicon {position: absolute; left: 20px; height: 100%; top: 0; padding:5px 0;}
+.leftModule.bk-con-menu ul .submenu{position: relative; width: 100%; border: 0;border-right: 1px solid #DDDDDD;}
+.leftModule.bk-con-menu .samebtn{
+	width: 25px;
+    height: 40px;
+    display: none;
+    overflow: hidden;
+    float: left;
+    cursor: pointer;
+    position: absolute;
+    top: 45%;
+    z-index: 111;
+    left: initial;
+    right:-25px;
+    border-top: 1px solid #dddddd;
+    border-left: 1px solid #f2f2f2;
+    border-radius: 0px 3px 3px 0px;   
+   
+}
+.leftModule.bk-con-menu ul .submenu:before{position: absolute;height: 100%; width:0; border-right: 1px dotted #dddddd; content: '';top:0;left: 30px;}
+.timehtml{
+	background: #ffffff;
+	color: #333333;
+}
+.bk-con-menu .wap-menulist .arrow{margin-left: 15px;}
+/****************************注册样式属性*****************************/
+.login_style{ 
+	background-color:#1c77ac;
+	background-image: url(../images/light.png);
+	background-repeat: no-repeat;
+	background-position: center top;
+	overflow: hidden;
+}
+.loginbody{background: url(../images/loginbg3.png) no-repeat center center;
+    width: 100%;
+    height: 585px;
+    overflow: hidden;
+    position: absolute;
+    top: 47px;
+}
+.login-layout .input-icon>[class*="icon-"] { line-height:32px;}
+.login-layout input{ margin-left:0px;}
+.login-layout .logintop{height:47px; position:absolute; top:0; background:rgba(0, 69, 109, 0.31); z-index:100; width:100%;}
+.login-layout .logintop span{color:#fff; line-height:47px;  text-indent:44px; color:#afc5d2; float:left;}
+.login-layout .logintop ul{float:right; padding-right:30px;}
+.login-layout .logintop ul li{float:left; margin-left:20px; line-height:47px;}
+.login-layout .logintop ul li a{color:#afc5d2;}
+.login-layout .logintop ul li a:hover{color:#fff;}
+.login-layout .login-layout .main-container:after{ display: none;}
+.login-layout .loginbm{height:50px; line-height:50px; text-align:center; background:rgba(0, 69, 109, 0.31);position:absolute; bottom:0; width:100%; color:#ffffff;}
+.login-layout  .loginbm a{font-weight:bold;color:#2E6EBA;}
+.login-layout  .loginbm a:hover{color:#fff;}
+.login-layout .main-content
+{
+  margin-left: 0;
+  min-height: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.login-layout label
+{
+  margin-bottom: 11px;
+}
+.login-box .social-login {
+    margin-top: 12px;
+    color: #888888;
+	text-align: center
+}
+.login-container .center{ margin-top:80px;}
+.login-layout{background-color:#1c77ac; background-repeat:no-repeat; background-position:center top; overflow:hidden;}
+.login-container {width: 850px;margin: 0 auto;}
+.login-container .login_logo {margin-top: 50px;text-align:center; margin-bottom:20px;}
+.login-layout .widget-box.visible {
+    visibility: visible;
+    -moz-transform: scale(1,1) translate(0);
+    -webkit-transform: scale(1,1) translate(0);
+    -o-transform: scale(1,1) translate(0);
+    -ms-transform: scale(1,1) translate(0);
+    transform: scale(1,1) translate(0);
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+    -o-transition: none;
+    -webkit-transition: none;
+}
+.login-layout .widget-box
+{
+  visibility: hidden;
+  border-right:0px;
+  overflow: hidden;
+  width: 100%;
+  border-bottom: 0;
+  box-shadow: none;
+ /* box-shadow: 0px 2px 18px #666666;
+  padding: 6px;
+  background: url(../images/yanse_01.png) repeat-x top;
+  box-shadow: 0px 2px 18px #41a2ff;
+  border: 1px solid #41a2ff;
+  -moz-transform: scale(0,1) translate(-150px);
+  -webkit-transform: scale(0,1) translate(-150px);
+  -o-transform: scale(0,1) translate(-150px);
+  -ms-transform: scale(0,1) translate(-150px);
+  transform: scale(0,1) translate(-150px);*/
+}
+.login-layout .login_icon{ float:left; width:450px; text-align:center}
+.login-layout .widget-box.visible
+{
+  visibility: visible;
+  -moz-transform: scale(1,1) translate(0);
+  -webkit-transform: scale(1,1) translate(0);
+  -o-transform: scale(1,1) translate(0);
+  -ms-transform: scale(1,1) translate(0);
+  transform: scale(1,1) translate(0);
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  -o-transition: none;
+  -webkit-transition: none;
+}
+
+.login-layout .widget-box .widget-main{ padding: 16px 36px 36px;  background: #f7f7f7;}
+.login-layout .widget-box .widget-main form{ margin: 0;}
+.login-layout .widget-box .widget-body .toolbar>div>a{font-size: 15px;font-weight: 400;text-shadow: 1px 0 1px rgba(0,0,0,0.25);}
+.Reg_log_style .frame_style i{ position:absolute; left:60px; top:0px; color:#ADADAD; font-size:16px; z-index:10}
+.Reg_log_style .frame_style i.tx_password{ font-size:12px; color:#F30}
+.Reg_log_style .frame_style.form_errors i{ display:none}
+.Reg_log_style .frame_style.form_error i{ display:block}
+.Reg_log_style .frame_style i{ display:none}
+.Reg_log_style .frame_style{ 
+	position:relative;     
+	border: 1px solid #dddddd;
+	/*box-shadow: 0px 0px 10px #41A2FF;*/
+	height:40px; 
+	padding:0px 5px; 
+	margin-bottom:15px; 
+	line-height:40px; 
+	width:286px;
+}
+
+.Reg_log_style .frame_style.form_errors{ border:1px solid #0e85c3}
+.Reg_log_style .frame_style #Codes_text{ width:150px; padding:0px 10px;}
+.Reg_log_style .frame_style .Codes_region{ position:absolute; height:38px; border-left:1px solid #ADADAD; width:80px; right:0px; top:0px;}
+.Reg_log_style .frame_style.form_errors .Codes_region{border-left:1px solid #0e85c3;}
+.Reg_log_style .frame_style.form_errors label{ border-right:1px solid #0e85c3;}
+.Reg_log_style .frame_style.form_errors label.password_icon{background-position: -39px 0px;}
+.Reg_log_style .frame_style.form_errors label.user_icon{background-position: -39px -35px;}
+.Reg_log_style .frame_style.form_errors label.Codes_icon{background-position: -39px -64px;}
+.login-main{position: relative;background-color:#ffffff;margin-top:20px;	}
+.Reg_log_style .frame_style.form_prompt label{color: #DB2023;border-right: 1px solid #DB2023;}
+.Reg_log_style .frame_style.form_prompt{border: 1px solid #DB2023;}
+.login-main .frame_style .prompt{color: #DB2023;}
+.login-main .skin-section{position: absolute; right: 0; height: 50px; border: 0;}
+.login-main .Bombbox{border-top: 1px solid #dddddd;}
+.login-main  .clickBombbox{color: #166CAA;}
+.login-main .skin-section:before{border: 0;}
+.login-main .skin-btn.selected{border-left: 1px solid #dddddd;}
+.login-main .Bombbox:after{height: 3px; content:''; width:50%;position: absolute;top: -1px;z-index: 1100;background: #ffffff;right:0}
+.login-main:after {
+    display: block;
+    content: "";
+    height: 10px;
+    margin-top: 20px;
+    background-color: #1c77ac;
+    background-size: 10px 20px;
+    background-image: linear-gradient(45deg, #ffffff 25%, transparent 25%, transparent), 
+	linear-gradient(-45deg, #ffffff 25%, transparent 25%, transparent), 
+	linear-gradient(45deg, transparent 75%, #ffffff 75%), 
+	linear-gradient(-45deg, transparent 75%, #ffffff 75%);
+}
+.login-main .title_name{ height:60px; line-height:40px; text-shadow:0px 3px 5px #41a2ff; margin-bottom:15px; color:#FFF; font-size:24px; margin-top:20px;}
+.login-main .login_btn{
+	border:0px;
+	text-decoration: none;
+	background: #2E6EBA;
+    width: 130px;
+	float:right;
+    height: 43px;
+    display: block;
+	margin-right:12px;
+    text-align: center;
+    line-height: 43px;
+    cursor: pointer;
+    font: 18px/43px 'microsoft yahei';
+    color: #ffffff;
+}
+.login-main .login_btn:hover { 
+	background: url(../images/nav_gv.png) repeat 0px -43px; 
+	color:#ffffff;
+	background-color:#1d7eb8;
+	-webkit-box-shadow: 0 0 6px #1d7eb8;
+	transition-duration: 0.5s;
+}
+.login-main .inline{ color:#888888}
+.widget-main .header.blue {border-bottom-color: #d5e3ef;}
+h4.bigger {font-size: 19px;}
+.widget-main .header {line-height: 28px;margin-bottom: 16px;padding-bottom: 4px;border-bottom: 1px solid #CCC;}
+.blue {color: #478fca!important;}
+.Reg_log_style .frame_style label {
+    float: left;
+    width: 40px;
+    text-align: center;
+    margin-top: 2px;
+    font-size: 26px;
+    height: 35px;
+    border-right: 1px solid #ddd;
+    color: #999999;
+}
+.Reg_log_style .frame_style.form_errors label{color: #166CAA;	}
+.Reg_log_style .frame_style label.password_icon{font-size: 32px;}
+.Reg_log_style .frame_style input {
+    height: 30px;
+    padding: 5px 10px;
+    border: 0px;
+	line-height:30px;
+    width: 189px;
+    font-size: 14px;
+    z-index: 11;
+    position: relative;
+    background: 0 none;
+}
+.Reg_log_style .frame_style.form_error i {display: block;}
+.Reg_log_style .frame_style i {display: none;}
+.Reg_log_style .frame_style i {
+    position: absolute;
+    left: 60px;
+    top: 0px;
+    color: #999;
+    font-size: 16px;
+    z-index: 10;
+}
+.Reg_log_style .frame_style .Codes_region {
+    position: absolute;
+    height: 40px;
+    border-left: 1px solid #ddd;
+    width: 80px;
+    right: 0px;
+    top: 0px;
+}
+.login-box .social-or-login {
+    margin-top: 4px;
+    position: relative;
+    z-index: 1;
+}
+.login-box .social-or-login:before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 0;
+    right: 0;
+    border-top: 1px dotted #a6c4db;
+}
+.login-box .social-or-login :first-child {
+    display: inline-block;
+    background: #A6C4DB;
+    padding: 0 8px;
+    color: #5090c1;
+    font-size: 13px;
+    border-radius: 3px;
+}
+#login_add .center{ text-align:center}
+.login-layout  .login_Click_Actions{ width:130px; float:right; text-align:center; color:#666}
+.Reg_log_style .frame_style .Codes_text{ width:108px;}
+.Reg_log_style .frame_style.form_errors{ border:1px solid #478fca}
+.Reg_log_style .frame_style.form_errors .Codes_region{border-left:1px solid #478fca;}
+.Reg_log_style .frame_style.form_errors label{ border-right:1px solid #478fca;}
+.Reg_log_style .frame_style.form_errors label.password_icon{background-position: -39px 0px;}
+.Reg_log_style .frame_style.form_errors label.user_icon{background-position: -39px -30px;}
+.Reg_log_style .frame_style.form_errors label.Codes_icon{background-position: -40px -60px;}
+.button_width{ width:80px; color:#FFF;  padding:20px 0px; line-height:30px; font-size:18px; cursor:pointer; margin:20px 0px;}
+/**************移动端界面样式*****************/
+.mobileStyle .logintop,
+.mobileStyle .loginbm,
+.mobileStyle .login-main:after{ display:none;}
+.mobileStyle .login-box .social-login{ padding-bottom: 15px;}
+.mobileStyle .login-container{width: 100%;}
+.mobileStyle .login-container .center{margin: 0; padding:0 20px;}
+.mobileStyle .login-container .center img{width: 100%;}
+.mobileStyle .login_icon{display: none;}
+.mobileStyle .login-main{padding:0 15px;}
+.mobileStyle form{ margin:0 auto;margin-right:0!important; width: 100%!important; display: block;}
+.mobileStyle .login-main .login_btn{float: none; width: 100%; margin: 15px 0;}
+/***********************移动设置*********************/
+.bk-herder-logo.wap-header{ border-bottom: 1px solid #333333;}
+.wap-menulist {overflow: hidden;}
+.wap-menulist .column-name{width: 80px;}
+.wap-menulist .column-name a{padding: 0px 10px;}
+.wap-Bombbox{position: fixed!important;width: 100%!important;right:0!important;z-index:1111;}
+/***************************内页移动样式****************************/
+.mobileStyle .Shops_info .left_shop .left_shop_logo{width: 100%;position: inherit; margin-bottom: 10px;left: 0;}
+.mobileStyle .Shops_info .left_shop .shop_logo{  margin: 0 auto;overflow: hidden; margin-bottom: 15px;}
+.mobileStyle .Shops_info .left_shop .Shops_content{margin: 0;}
+.mobileStyle .Shops_info .right_shop{width: 100%;position: inherit; border-top: 1px solid #dddddd;border-left: 0px;}
+.mobileStyle .dd_echarts{overflow-x:scroll;}
+.mobileStyle .mainwidth{width: 700px;}

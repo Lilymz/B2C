@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xsi:schemaLocation="http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	<!-- 数据源配置 -->
+	<context:property-placeholder
+		location="classpath:jdbc.properties" />
+	<bean id="dataSource"
+		class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="driverClass" value="${jdbc.DriverName}" />
+		<property name="jdbcUrl" value="${jdbc.url}" />
+		<property name="user" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+		<!-- c3p0数据库连接池的参数配置 -->
+		<property name="maxPoolSize" value="30"></property>
+		<property name="minPoolSize" value="10"></property>
+		<!-- 自动提交事务false表示不用自动提交 -->
+		<property name="autoCommitOnClose" value="false"></property>
+		<property name="checkoutTimeout" value="10000"></property>
+		<!-- 当连接失败时 -->
+		<property name="acquireRetryAttempts" value="2"></property>
+	</bean>
+	<bean id="sessionFactory"
+		class="org.mybatis.spring.SqlSessionFactoryBean">
+		<!-- 数据源装入 -->
+		<property name="dataSource" ref="dataSource" />
+		<!-- 装入mybatis.xml配置 -->
+		<property name="configLocation" value="classpath:mybatis.xml" />
+		<!-- 扫描entity包，使用别名,说明了entity使用不用全限定名称了 -->
+		<property name="typeAliasesPackage"
+			value="zjmx.ssm.o2o.entity" />
+		<!-- *mapper.xml映射文件 -->
+		<property name="mapperLocations"
+			value="classpath:mybatismapper/*.xml" />
+	</bean>
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="zjmx.ssm.o2o.dao" />
+		<!-- optional unless there are multiple session factories defined -->
+		<property name="sqlSessionFactoryBeanName"
+			value="sessionFactory" />
+	</bean>
+</beans>

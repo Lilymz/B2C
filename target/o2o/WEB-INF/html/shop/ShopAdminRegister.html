@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+<meta charset="UTF-8">
+<title>店家注册</title>
+
+<link rel="stylesheet" href="../static/css/ShopAdminRegister.css">
+
+</head>
+<body>
+
+<div class="form">
+
+      <div class="title">欢迎光临</div>
+	  
+      <div class="subtitle">创建您的店家帐户！</div>
+	  <div class="input-container ic2">
+        <input id="email" class="input" type="text" placeholder=" " />
+        <div class="cut cut-short"></div>
+        <label for="邮箱" class="placeholder">邮箱</label>
+      </div>
+	  <div class="input-container ic2">
+        <input id="gender" class="input" type="text" placeholder=" " />
+        <div class="cut cut-short"></div>
+        <label for="性别" class="placeholder">性别</label>
+      </div>
+      <div class="input-container ic1">
+        <input id="userName" class="input" type="text" placeholder=" " />
+        <div class="cut"></div>
+        <label for="用户名" class="placeholder">用户名</label>
+      </div>
+	  
+      <div class="input-container ic2">
+        <input id="password" class="input" type="text" placeholder=" " />
+        <div class="cut"></div>
+        <label for="密码" class="placeholder">密码</label>
+      </div>
+      <button type="text" class="submit" onclick="registerUserORShopAdmin(2)">注册</button>
+	  
+</div>
+</body>
+	<script src="../static/template/js/jquery.min.js"></script>
+	<script src="../commons/isLogin.js"> </script>
+</html>

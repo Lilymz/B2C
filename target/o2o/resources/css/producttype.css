@@ -1,0 +1,15 @@
+.content-padded.grid-demo{
+	border:2px red;
+	background: #368ac9;
+}
+.content.native-scroll{
+	border: 2px solid red;
+}
+.name{
+	color: white;
+}
+.row{
+	overflow: hidden
+	margin-left: -4%;
+	text-align: center;
+}

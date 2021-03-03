@@ -1,0 +1,42 @@
+.content-block{
+	margin:0px;
+	padding:0px;
+}
+.searchbar {
+    background: white;
+}
+.list-block {
+    margin: 0.25rem 0;
+}
+item-input,item-title.label{
+		font-weight:15px;
+		font-family:fangsong;
+		text-align:center;
+}
+
+.card{
+     margin: 0.4rem
+}
+@media screen and (max-width: 500px) {
+    .content{
+	top:18%;
+	}
+}
+@media screen and (min-width: 500px) {
+    .content{
+	top: 118px;
+	}
+}
+.shopcard{
+	height:30%;
+}
+.card-content,.card-content-inner,.list-block.media-list,ul,li{
+	height:100%;
+}
+.list-block .item-title {
+	width:100%;
+}
+.list-block .item-content{
+	padding-left: 0;
+	margin:0;
+}
