@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="zjmx.ssm.o2o.dao.ProductDao">
+	<resultMap type="zjmx.ssm.o2o.entity.Product" id="productMap">
+		<id column="product_id" property="productId" />
+		<result column="product_name" property="productName" />
+		<result column="product_desc" property="productDesc" />
+		<result column="img_addr" property="imgAddr" />
+		<result column="normal_price" property="normalPrice" />
+		<result column="promotion_price" property="promotionPrice" />
+		<result column="priority" property="priority" />
+		<result column="create_time" property="createTime" />
+		<result column="last_edit_time" property="lastEditTime" />
+		<result column="enable_status" property="enableStatus" />
+		<collection property="productImglist"
+			ofType="zjmx.ssm.o2o.entity.ProductImage">
+			<id column="productImage_id" property="productImageId" />
+			<result column="img_addr" property="imgAddr" />
+			<result column="img_desc" property="imgDesc" />
+			<result column="priority" property="priority" />
+			<result column="create_time" property="createTime" />
+			<result column="product_id" property="productId" />
+		</collection>
+		<collection property="productType"
+			ofType="zjmx.ssm.o2o.entity.ProductType">
+			<id column="productType_id" property="productTypeId" />
+			<result column="shop_id" property="shopId" />
+			<result column="productType_name" property="productTypeName" />
+			<result column="priority" property="priority" />
+			<result column="create_time" property="createTime" />
+		</collection>
+		<collection property="shop"
+			ofType="zjmx.ssm.o2o.entity.Shop">
+			<id column="shop_id" property="shopId" />
+			<result column="shop_name" property="shopName"/>
+			<result column="shop_desc" property="shopDesc"/>
+			<result column="shop_addr" property="shopAddr"/>
+			<result column="phone" property="phone"/>
+			<result column="shop_img" property="shopImg"/>
+			<result column="priority" property="priority"/>
+			<result column="create_time" property="createTime"/>
+			<result column="enable_status" property="enableStatus"/>
+			<result column="advice" property="advice"/>
+		</collection>
+	</resultMap>
+	<resultMap type="zjmx.ssm.o2o.entity.Product" id="SingleProductMap">
+	<id column="product_id" property="productId" />
+		<result column="product_name" property="productName" />
+		<result column="product_desc" property="productDesc" />
+		<result column="img_addr" property="imgAddr" />
+		<result column="normal_price" property="normalPrice" />
+		<result column="promotion_price" property="promotionPrice" />
+		<result column="priority" property="priority" />
+		<result column="create_time" property="createTime" />
+		<result column="enable_status" property="enableStatus" />
+		<collection property="productType"
+			ofType="zjmx.ssm.o2o.entity.ProductType">
+			<id column="productType_id" property="productTypeId" />
+			<result column="shop_id" property="shopId" />
+			<result column="productType_name" property="productTypeName" />
+			<result column="priority" property="priority" />
+			<result column="create_time" property="createTime" />
+		</collection>
+	</resultMap>
+	<select id="queryProductList" resultMap="productMap">
+		SELECT
+		tp.product_id,tp.product_name,tp.product_desc,tp.img_addr,tp.normal_price,tp.promotion_price,tp.priority,
+		tp.create_time,tp.last_edit_time,tp.enable_status,tp.productImage_id,tp.productType_id,tp.shop_id,
+		tpi.*,ts.*,tst.*
+		FROM
+		tb_product tp,tb_productimage tpi,tb_producttype
+		tst,tb_shop ts
+		<where>
+			<if test="productConditon!=null">
+				tp.productImage_id=tpi.productImage_id and
+				tp.productType_id=tst.productType_id and tp.shop_id=ts.shop_id
+			</if>
+			<if test="productConditon.productName!=null">
+				and tp.product_name like
+				'%${productConditon.productName}%'
+			</if>
+			<if test="productConditon.enableStatus!=null">
+				and tp.enable_status=#{productConditon.enableStatus}
+			</if>
+			<if test="productConditon.shop!=null and productConditon.shop.shopId!=null">
+				and tp.shop_id=#{productConditon.shop.shopId}
+			</if>
+			<if test="productConditon.productType!=null and productConditon.productType.productTypeId!=null">
+				and tp.productType_id=#{productConditon.productType.productTypeId}
+			</if>
+		</where>
+		ORDER BY
+		tp.priority DESC
+		LIMIT #{beginIndex},#{pageSize}
+	</select>
+	<insert id="insertProduct" keyProperty="product.productId" keyColumn="product_id" useGeneratedKeys="true">
+		INSERT INTO
+		tb_product(product_name,product_desc,img_addr,normal_price,promotion_price,priority,create_time,last_edit_time,
+		enable_status,shop_id,productType_id)
+		VALUES(#{product.productName},#{product.productDesc},#{product.imgAddr},#{product.normalPrice},#{product.promotionPrice},#{product.priority},#{product.createTime},#{product.lastEditTime},#{product.enableStatus},#{product.shop.shopId},#{product.productType.productTypeId})
+	</insert>
+	<delete id="deleteProduct" parameterType="long">
+	DELETE FROM tb_product WHERE product_id=#{productId}
+	</delete>
+	<select id="queryProductById" resultType="zjmx.ssm.o2o.entity.Product" resultMap="SingleProductMap">
+		SELECT product_id,product_name,product_desc,img_addr,normal_price,promotion_price,priority,create_time,enable_status,productType_id
+		FROM tb_product WHERE product_id=#{ProductId};
+	</select>
+	<update id="updateProduct">
+	update tb_product 
+	<set>
+		<if test="product.productName!=null">
+			product_name=#{product.productName},
+		</if>
+		<if test="product.productType.productTypeId!=null">
+			productType_id=#{product.productType.productTypeId},
+		</if>
+		<if test="product.priority!=null">
+			priority=#{product.priority},
+		</if>
+		<if test="product.normalPrice!=null">
+			normal_price=#{product.normalPrice},
+		</if>
+		<if test="product.promotionPrice!=null">
+			promotion_price=#{product.promotionPrice},
+		</if>
+		<if test="product.imgAddr!=null">
+			img_addr=#{product.imgAddr},
+		</if>
+		<if test="product.createTime!=null">
+			create_time=#{product.createTime},
+		</if>
+		<if test="product.lastEditTime!=null">
+			last_edit_time=#{product.lastEditTime},
+		</if>
+		<if test="product.productDesc!=null">
+			product_desc=#{product.productDesc},
+		</if>
+		<if test="product.enableStatus!=null">
+			enable_status=#{product.enableStatus}
+		</if>
+	</set>
+	WHERE product_id=#{product.productId}
+	</update>
+	<update id="updateProductEnableStatusByProductId">
+	update tb_product 
+	<set>
+		<if test="product.lastEditTime!=null">
+			last_edit_time=#{product.lastEditTime},
+		</if>
+		<if test="product.enableStatus!=null">
+			enable_status=#{product.enableStatus}
+		</if>
+		<if test="product.priority!=null">
+			priority=#{product.priority},
+		</if>
+	</set>
+	WHERE product_id=#{product.productId}
+	</update>
+</mapper>

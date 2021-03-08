@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="zjmx.ssm.o2o.dao.CommentDao">
+	<select id="getComments" resultType="zjmx.ssm.o2o.entity.Comment">
+		SELECT comment_id,shop_id,comment_content,create_time
+		FROM tb_comment
+		<where>
+			<if test="commentCondition!=null and commentCondition.shop.shopId">
+				and shop_id=#{commentCondition.shop.shopId}
+			</if>
+		</where>
+	</select>
+	<update id="updateComment" useGeneratedKeys="true">
+		UPDATE
+		tb_comment
+		SET love=love+1
+		WHERE
+		comment_id=#{commentCondition.commentId}
+	</update>
+	<insert id="insertComment" useGeneratedKeys="true">
+		INSERT INTO tb_comment(comment_id,shop_id,comment_content,love,create_time)
+		VALUES(null,#{shop.shopId},#{commentContent},#{love},#{createTime})
+	</insert>
+</mapper>

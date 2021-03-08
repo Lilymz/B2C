@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="zjmx.ssm.o2o.dao.OrderDao">
+		<resultMap type="zjmx.ssm.o2o.entity.Order" id="orderMap">
+			<id column="order_id" property="orderId"/>
+			<result column="order_number" property="orderNumber"/>
+			<result column="order_product_name" property="orderProductName"/>
+			<result column="order_method" property="orderMethod"/>
+			<result column="create_time" property="createTime"/>
+			<result column="deal_time" property="dealTime"/>
+			<result column="order_enable_status" property="orderEnableStatus"/>
+			<result column="order_price" property="orderPrice"/>
+			<collection property="userInfo" ofType="zjmx.ssm.o2o.entity.UserInfo">
+				<id column="user_id" property="userId"/>
+				<result column="user_name" property="userName"/>
+				<result column="user_password" property="userPassword"/>
+				<result column="profile_img" property="profileImg"/>
+				<result column="enable_status" property="enableStatus"/>
+				<result column="user_type" property="userType"/>
+				<result column="gender" property="gender"/>
+				<result column="email" property="email"/>
+				<result column="create_time" property="createTime"/>
+				<result column="last_edit_time" property="lastEditTime"/>
+				<result column="money" property="money"/>
+			</collection>
+			<collection property="shop" ofType="zjmx.ssm.o2o.entity.Shop">
+			<id column="shop_id" property="shopId"/>
+			<result column="shop_name" property="shopName"/>
+			</collection>
+			<collection property="shippingAddr" ofType="zjmx.ssm.o2o.entity.ShippingAddr">
+				<id column="goods_id" property="goodsId"/>
+				<result column="goods_name" property="goodsName"/>
+				<result column="goods_phone" property="goodsPhone"/>
+				<result column="goods_addr" property="goodsAddr"/>
+				<result column="user_id" property="userInfo.userId"/>
+			</collection>
+		</resultMap>
+	<select id="queryOrderByShopId" resultMap="orderMap">
+		SELECT
+		o.order_id,o.order_number,o.order_product_name,o.order_method,o.create_time,o.deal_time,
+		o.order_enable_status,o.order_price,ui.*,s.*,sa.*
+		FROM
+		tb_order o,tb_userinfo ui,tb_shop s,tb_shippingaddr sa
+		<where>
+			<if test="order!=null">
+				o.user_id=ui.user_id and o.shop_id=s.shop_id and o.goods_id=sa.goods_id
+			</if>
+			<if test="order.shop!=null and order.shop.shopId!=null">
+				and o.shop_id=#{order.shop.shopId}
+			</if>
+			<if test="order.userInfo!=null and order.userInfo.userId!=null">
+				and o.user_id=#{order.userInfo.userId}
+			</if>
+			<if test="order.orderNumber!=null">
+				and o.order_number like 
+				'%${order.orderNumber}%'
+			</if>
+		</where>
+		ORDER BY o.deal_time
+	</select>
+	<update id="updateOrderByIf">
+		UPDATE tb_order
+		<set>
+			<if test="order!=null and order.orderNumber!=null">
+				order_number=#{order.orderNumber},
+			</if>
+			<if test="order!=null and order.orderProductName!=null">
+				order_product_name=#{order.orderProductName},
+			</if>
+			<if test="order!=null and order.orderMethod!=null">
+				order_method=#{order.orderMethod},
+			</if>
+			<if test="order!=null and order.dealTime!=null">
+				deal_time=#{order.dealTime},
+			</if>
+			<if test="order!=null and order.orderEnableStatus!=null">
+				order_enable_status=#{order.orderEnableStatus},
+			</if>
+			<if test="order!=null and order.orderPrice!=null">
+				order_price=#{order.orderPrice},
+			</if>
+		</set>
+		WHERE
+		order_id=#{order.orderId}
+	</update>
+	<delete id="deleteOrderByOrderId">
+		DELETE FROM
+		tb_order
+		WHERE
+		order_id=#{orderId}
+	</delete>
+	<insert id="insertOrder">
+		INSERT INTO tb_order(order_id,order_number,order_product_name,order_method,create_time,
+		deal_time,order_enable_status,order_price,user_id,shop_id,goods_id)
+		VALUES(null,#{order.orderNumber},#{order.orderProductName},#{order.orderMethod},#{order.createTime},#{order.dealTime},#{order.orderEnableStatus},#{order.orderPrice},#{order.userInfo.userId},#{order.shop.shopId},#{order.shippingAddr.goodsId})
+	</insert>
+	<insert id="batchInsertOrder">
+		INSERT INTO tb_order(order_id,order_number,order_product_name,order_method,create_time,
+		deal_time,order_enable_status,order_price,user_id,shop_id,goods_id)
+		VALUES
+		<foreach collection="list" item="order" index="index" separator=",">
+		(null,
+		 #{order.orderNumber},
+		 #{order.orderProductName},
+		 #{order.orderMethod},
+		 #{order.createTime},
+		 #{order.dealTime},
+		 #{order.orderEnableStatus},
+		 #{order.orderPrice},
+		 #{order.userInfo.userId},
+		 #{order.shop.shopId},
+		 #{order.shippingAddr.goodsId}
+		)
+		</foreach>
+	</insert>
+</mapper>

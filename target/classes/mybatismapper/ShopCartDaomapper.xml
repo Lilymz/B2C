@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="zjmx.ssm.o2o.dao.ShopCartDao">
+	<select id="queryShopCarts" resultType="zjmx.ssm.o2o.entity.ShopCart">
+		SELECT
+		DISTINCT s.shopcart_productPromotionPrice,s.user_id,s.shopcart_productImg,s.shopcart_productDesc,
+		s.shopcart_productName,s.shopcart_shopId
+		FROM 
+		tb_shopcart s ,tb_userinfo b 
+		WHERE s.user_id=b.user_id and s.user_id=#{shopCart.userfo.userId}
+	</select>
+	<insert id="insertShopCart" useGeneratedKeys="true">
+		INSERT INTO 
+		tb_shopcart(shopcart_id,shopcart_productImg,shopcart_productDesc,shopcart_productPromotionPrice,shopcart_productName,shopcart_shopId,user_id)
+		VALUES(null,#{shopCart.shopcartProductImg},#{shopCart.shopcartProductDesc},#{shopCart.shopcartProductPromotion},
+		#{shopCart.shopcartProductName},#{shopCart.shopcartShopId},#{shopCart.userfo.userId})
+	</insert>
+	<delete id="deleteShopCart">
+	DELETE FROM 
+	tb_shopcart 
+	WHERE shopcart_productImg =#{shopCart.shopcartProductImg}
+	</delete>
+</mapper>

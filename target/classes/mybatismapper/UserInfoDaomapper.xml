@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="zjmx.ssm.o2o.dao.UserInfoDao">
+	<select id="queryUserInfo"
+		resultType="zjmx.ssm.o2o.entity.UserInfo">
+		SELECT
+		user_id,user_name,user_password,profile_img,enable_status,user_type,gender,
+		email,create_time,last_edit_time,money
+		FROM tb_userinfo
+		<where>
+			<if
+				test="userInfoConditon!=null and userInfoConditon.userId!=null">
+				and user_id=#{userInfoConditon.userId}
+			</if>
+		</where>
+	</select>
+	<select id="queryUserInfos"
+		resultType="zjmx.ssm.o2o.entity.UserInfo">
+		SELECT
+		user_id,user_name,user_password,profile_img,enable_status,user_type,gender,
+		email,create_time,last_edit_time,money
+		FROM tb_userinfo
+		<where>
+			<if test="userInfoConditon!=null and userInfoConditon.userType!=null">
+				and user_type=#{userInfoConditon.userType}
+			</if>
+			<if test="userInfoConditon!=null and userInfoConditon.userName!=null">
+				and user_name like '%${userInfoConditon.userName}%'
+			</if>
+		</where>
+	</select>
+	<select id="verifyUserInfo"
+		resultType="zjmx.ssm.o2o.entity.UserInfo">
+		SELECT
+		user_id,user_name,user_password,profile_img,enable_status,user_type,gender,
+		email,create_time,last_edit_time,money
+		FROM tb_userinfo
+		WHERE
+		user_name=#{userInfoConditon.userName} and user_password=#{userInfoConditon.userPassword}
+		<if test="userInfoConditon!=null and userInfoConditon.userType!=null">
+		and user_type=#{userInfoConditon.userType}
+		</if>
+	</select>
+	<update id="updateUserInfoBymoney">
+		UPDATE tb_userinfo
+		<set>
+			<if test="userInfoConditon!=null and userInfoConditon.userPassword!=null">
+			enable_status=#{userInfoConditon.userPassword},
+			</if>
+			<if test="userInfoConditon!=null and userInfoConditon.profileImg!=null">
+			profile_img=#{userInfoConditon.profileImg},
+			</if>
+			<if test="userInfoConditon!=null and userInfoConditon.enableStatus!=null">
+			enable_status=#{userInfoConditon.enableStatus},
+			</if>
+			<if test="userInfoConditon!=null and userInfoConditon.userType!=null">
+			user_type=#{userInfoConditon.userType},
+			</if>
+			<if test="userInfoConditon!=null and userInfoConditon.email!=null">
+			email=#{userInfoConditon.email},
+			</if>
+			<if test="userInfoConditon!=null and userInfoConditon.lastEditTime!=null">
+			last_edit_time=#{userInfoConditon.lastEditTime},
+			</if>
+			<if test="userInfoConditon!=null and userInfoConditon.money!=null">
+			money=#{userInfoConditon.money}
+			</if>
+		</set>
+		WHERE user_id=#{userInfoConditon.userId}
+	</update>
+	<insert id="insertUserInfo" useGeneratedKeys="true">
+		INSERT INTO
+		tb_userinfo(user_id,user_name,user_password,profile_img,enable_status,user_type,gender,email,create_time,last_edit_time,money)
+		VALUES(null,#{userInfoConditon.userName},#{userInfoConditon.userPassword},#{userInfoConditon.profileImg},#{userInfoConditon.enableStatus},#{userInfoConditon.userType},#{userInfoConditon.gender},#{userInfoConditon.email},#{userInfoConditon.createTime},#{userInfoConditon.lastEditTime},#{userInfoConditon.money})
+	</insert>
+	<delete id="deleteUserInfoByUserId">
+		DELETE
+		FROM tb_userinfo
+		WHERE user_id=#{userId}
+	</delete>
+</mapper>
